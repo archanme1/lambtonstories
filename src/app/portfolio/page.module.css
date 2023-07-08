@@ -1,13 +1,17 @@
 .mainTitle {
-  font-size: 50px;
+  font-size: 14px;
   text-align: center;
-}
-.container {
+  font-weight: 100;
+  letter-spacing: 3px;
 }
 
 .selectTitle {
   margin: 30px 0px;
   font-size: 25px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: 3px;
 }
 
 .items {
@@ -34,12 +38,15 @@
 .item:nth-child(3) {
   background-image: url("/apps.jpg");
 }
+.item:nth-child(4) {
+  background-image: url("/websites.jpg");
+}
 
 .title {
   position: absolute;
   right: 10px;
   bottom: 10px;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
 }
 

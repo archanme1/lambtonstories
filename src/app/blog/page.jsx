@@ -6,7 +6,7 @@ import Image from "next/image";
 
 async function getData() {
   const res = await fetch("http://localhost:3000/api/posts/", {
-    next: { revalidate: 10 },
+    cache: "no-store",
   });
 
   if (!res.ok) {
@@ -33,8 +33,8 @@ const Blog = async () => {
             <Image
               src={item.img}
               alt=""
-              width={250}
-              height={150}
+              width={200}
+              height={100}
               className={styles.image}
             />
           </div>

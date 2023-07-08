@@ -19,7 +19,7 @@
 
 .imgContainer {
   flex: 1;
-  height: 300px;
+  height: 250px;
   position: relative;
 }
 
@@ -35,7 +35,7 @@
 }
 
 .title {
-  font-size: 50px;
+  font-size: 30px;
 }
 
 .desc {

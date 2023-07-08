@@ -13,29 +13,19 @@ const links = [
     url: "/",
   },
   {
-    id: 2,
-    title: "Portfolio",
-    url: "/portfolio",
-  },
-  {
     id: 3,
     title: "Blog",
     url: "/blog",
   },
   {
-    id: 4,
-    title: "About",
-    url: "/about",
+    id: 6,
+    title: "Dashboard",
+    url: "/dashboard",
   },
   {
     id: 5,
     title: "Contact",
     url: "/contact",
-  },
-  {
-    id: 6,
-    title: "Dashboard",
-    url: "/dashboard",
   },
 ];
 
@@ -54,9 +44,12 @@ const Navbar = () => {
           </Link>
         ))}
         {session.status === "authenticated" && (
-          <button className={styles.logout} onClick={signOut}>
-            LogOut
-          </button>
+          <>
+            <h4>Hey {session?.data?.user.name} 👋🏼</h4>
+            <button className={styles.logout} onClick={signOut}>
+              LogOut
+            </button>
+          </>
         )}
       </div>
       <DarkModeToggle />

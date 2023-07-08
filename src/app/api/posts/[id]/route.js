@@ -12,3 +12,16 @@ export const GET = async (request, { params }) => {
     return new NextResponse("couldn't fetch single post", { status: 500 });
   }
 };
+
+export const DELETE = async (request, { params }) => {
+  const { id } = params;
+  try {
+    await connection();
+
+    await Post.findByIdAndDelete(id);
+
+    return new NextResponse("Your post has been deleted", { status: 201 });
+  } catch (error) {
+    return new NextResponse("couldn't delete your post", { status: 500 });
+  }
+};
