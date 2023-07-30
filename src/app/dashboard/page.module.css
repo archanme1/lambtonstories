@@ -47,6 +47,16 @@
   font-weight: bold;
 }
 
+.uploadButton {
+  padding: 20px;
+  cursor: pointer;
+  background-color: rebeccapurple;
+  border: none;
+  border-radius: 5px;
+  color: #eee;
+  font-weight: bold;
+}
+
 .button {
   padding: 20px;
   cursor: pointer;
@@ -55,4 +65,23 @@
   border-radius: 5px;
   color: #eee;
   font-weight: bold;
+}
+
+.additionalButtonName {
+  padding: 20px;
+  cursor: pointer;
+  background-color: rebeccapurple;
+  border: none;
+  border-radius: 5px;
+  color: #eee;
+  font-weight: bold;
+  cursor: not-allowed;
+}
+
+.uploadButtonContainer input[type="file"] {
+  /* Hide the default file input */
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  display: none;
 }

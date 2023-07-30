@@ -5,13 +5,13 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useState } from "react";
+import { UploadButton } from "@uploadthing/react";
 
 const Dashboard = () => {
-  // const [file, setFile] = useState(null);
+  const [selectedImg, setSelectedImg] = useState("");
 
   const router = useRouter();
   const session = useSession();
-  console.log(session);
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -20,35 +20,12 @@ const Dashboard = () => {
     fetcher
   );
 
-  // const upload = async (fileData) => {
-  //   const data = new FormData();
-  //   data.append("file", fileData);
-  //   data.append("upload_preset", "lambtonStories");
-
-  //   try {
-  //     const res = await fetch(
-  //       "https://api.cloudinary.com/v1_1/djk5lo4v0/image/upload",
-  //       {
-  //         method: "POST",
-  //         body: JSON.stringify(data),
-  //       }
-  //     );
-  //     const response = await res.data;
-  //     const { url } = response;
-  //     return url;
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const title = e.target[0].value;
     const desc = e.target[1].value;
-    const img = e.target[2].value;
-    const content = e.target[3].value;
-
-    // const img = await upload(file);
+    const content = e.target[2].value;
+    const img = selectedImg;
 
     try {
       await fetch("/api/posts", {
@@ -125,18 +102,40 @@ const Dashboard = () => {
           </h1>
           <input type="text" placeholder="Title" className={styles.input} />
           <input type="text" placeholder="Desc" className={styles.input} />
-          <input
-            type="text"
-            className={styles.input}
-            placeholder="statically copy address and paste it! no dynamic"
-          />
+
           <textarea
             placeholder="Content"
             className={styles.textArea}
             cols="30"
             rows="10"
           ></textarea>
-          <button className={styles.button}>Send</button>
+          <div className={styles.uploadButtonContainer}>
+            <UploadButton
+              endpoint="imageUploader"
+              onClientUploadComplete={(res) => {
+                // Do something with the response
+                setSelectedImg(res[0].fileUrl);
+              }}
+              onUploadError={(error) => {
+                // Do something with the error.
+                console.log(error);
+              }}
+            >
+              <label className={styles.uploadButtonLabel}>
+                Upload Image
+                <span className={styles.uploadButtonOverlay} />
+              </label>
+            </UploadButton>
+          </div>
+          <button
+            className={
+              selectedImg
+                ? `${styles.button}`
+                : `${styles.additionalButtonName}`
+            }
+          >
+            Send
+          </button>
         </form>
       </div>
     );

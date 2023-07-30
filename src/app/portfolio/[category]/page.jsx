@@ -29,7 +29,8 @@ const Category = ({ params }) => {
               repellendus ad odit distinctio voluptate rem velit in minus
               tempore.
             </p>
-            <Button url="#" text="See More" />
+
+            <Button url="" text="Take me to the course" />
           </div>
           <div className={styles.imgContainer}>
             <Image src={item.image} className={styles.img} alt="" fill={true} />

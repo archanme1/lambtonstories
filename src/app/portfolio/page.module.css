@@ -16,41 +16,63 @@
 
 .items {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
+  gap: 50px;
+  margin-bottom: 20px;
 }
 
 .item {
   border: 3px solid #bbb;
   border-radius: 5px;
   width: 250px;
-  height: 300px;
+  height: 200px;
   position: relative;
   background-size: cover !important;
 }
 
 .item:nth-child(1) {
-  background-image: url("/illustration.png");
+  background-image: url("/computer.jpeg");
 }
 .item:nth-child(2) {
-  background-image: url("/websites.jpg");
+  background-image: url("/business.jpeg");
 }
 .item:nth-child(3) {
-  background-image: url("/apps.jpg");
+  background-image: url("/big.jpeg");
 }
 .item:nth-child(4) {
   background-image: url("/websites.jpg");
+}
+.item:nth-child(5) {
+  background-image: url("/supply.jpeg");
+}
+.item:nth-child(6) {
+  background-image: url("/cyber.jpeg");
+}
+.item:nth-child(7) {
+  background-image: url("/project.jpeg");
+}
+.item:nth-child(8) {
+  background-image: url("/hotel.jpeg");
+  transition: background-size 0.3s ease;
+}
+
+.item:hover {
+  transform: scale(1.1);
 }
 
 .title {
   position: absolute;
   right: 10px;
   bottom: 10px;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 .item:hover .title {
   color: rebeccapurple;
+  font-size: 20px;
   transition: 1s;
+  background-image: scale;
 }
