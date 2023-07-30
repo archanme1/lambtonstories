@@ -4,7 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 async function getData(id) {
-  const res = await import(`../api/posts/${id}`, {
+  const res = await import(`../../app/api/posts/${id}`, {
     next: {
       revalidate: 10,
     },

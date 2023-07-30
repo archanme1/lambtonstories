@@ -5,7 +5,7 @@ import Image from "next/image";
 // import { notFound } from "next/navigation";
 
 async function getData() {
-  const res = await import("../api/posts", {
+  const res = await import("../../app/api/posts", {
     cache: "no-store",
   });
 
