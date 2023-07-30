@@ -54,3 +54,18 @@
   font-weight: bold;
   font-size: 18px;
 }
+
+.sendButton {
+  background-color: rebeccapurple;
+  color: white;
+  padding: 15px;
+  width: max-content;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.successMessage {
+  font-size: 12px;
+  color: green;
+}
