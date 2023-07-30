@@ -2,13 +2,7 @@
 import React, { useRef, useState } from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
-import Button from "@/components/button/Button";
 import emailjs from "@emailjs/browser";
-
-export const metadata = {
-  title: "Lambton Stories contact paginfoe",
-  description: "Contact us for lambton stories and confessions",
-};
 
 const Contact = () => {
   const ref = useRef();
@@ -75,7 +69,7 @@ const Contact = () => {
           </button>
           {isSuccess && (
             <span className={styles.successMessage}>
-              Your Message has been sent. We will get back to you soon :)
+              Your Message has been sent. We will get back to you soon
             </span>
           )}
         </form>
